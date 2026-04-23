@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
 // ─── API BASE (change this if your backend runs on a different port) ────────
-const API = "http://localhost:5000/api";
+const API = import.meta.env.VITE_API_URL;
 
 // ─── API HELPERS ────────────────────────────────────────────────────────────
 const api = {
