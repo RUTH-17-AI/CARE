@@ -11,6 +11,21 @@ const api = {
   delete: (url)       => fetch(`${API}${url}`, { method:"DELETE" }).then(r => r.json()),
 };
 
+
+const [patients, setPatients] = useState([]);
+
+useEffect(() => {
+  fetch(import.meta.env.VITE_API_URL + "/patients")
+    .then(res => res.json())
+    .then(data => {
+      console.log("PATIENTS:", data);
+      setPatients(data);
+    })
+    .catch(err => console.log(err));
+}, []);
+useEffect(() => {
+  fetchAll();
+}, []);
 // ─── THEME ──────────────────────────────────────────────────────────────────
 const C = {
   navy:"#0F2044", blue:"#1D4ED8", blueLight:"#3B82F6",
