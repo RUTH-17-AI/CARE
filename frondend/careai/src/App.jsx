@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 // ─── API BASE (change this if your backend runs on a different port) ────────
 const API = import.meta.env.VITE_API_URL;
-
+console.log("CHECK API:", import.meta.env.VITE_API_URL);
 // ─── API HELPERS ────────────────────────────────────────────────────────────
 const api = {
   get:    (url) => fetch(`${API}${url}`).then(r => r.json()),
